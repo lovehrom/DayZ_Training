@@ -33,6 +33,7 @@
 | [CF_MODSTORAGE.md](CF_MODSTORAGE.md) | CF Persistent Storage | CF mod (1559212036) | ⚠️ Mod-derived |
 | [AI_NPC_CLASSES.md](AI_NPC_CLASSES.md) | NPC Bandits Classes | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
 | [AI_JSON_CONFIG.md](AI_JSON_CONFIG.md) | NPC JSON Configuration | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
+| [NOTIFICATION_SYSTEM.md](NOTIFICATION_SYSTEM.md) | Player Notifications RPC | NotificationsSystem (3624261153) | ⚠️ Mod-derived |
 
 ---
 
