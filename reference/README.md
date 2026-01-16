@@ -21,6 +21,13 @@
 | [CF_FRAMEWORK.md](CF_FRAMEWORK.md) | Community Framework API | CF mod (v1.1.0) | ⚠️ Mod-derived |
 | [AI_SYSTEM.md](AI_SYSTEM.md) | NPC Bandits AI | AI Bandits mod | ⚠️ Mod-derived |
 | [HOOK_POINTS.md](HOOK_POINTS.md) | modded class hook points | raw_data + mods | ⚠️ Mixed |
+| [PHYSICS_SYSTEM.md](PHYSICS_SYSTEM.md) | RaycastRV, PhysicsGet* | raw_data/PlayerBase.c, EntityAI.c | ✅ Проверено |
+| [STORAGE_SYSTEM.md](STORAGE_SYSTEM.md) | OnStoreSave/Load patterns | raw_data/PlayerBase.c:6802-6968 | ✅ Проверено |
+| [MISSION_API.md](MISSION_API.md) | GetMission(), WorldData | raw_data/PlayerBase.c (40+ uses) | ✅ Проверено |
+| [PARTICLE_SYSTEM.md](PARTICLE_SYSTEM.md) | ParticleManager, weapon particles | raw_data/PlayerBase.c, ItemBase.c | ✅ Проверено |
+| [UI_HUD_SYSTEM.md](UI_HUD_SYSTEM.md) | ScriptedWidgetEventHandler | DayZCommunityOfflineMode samples | ✅ Проверено |
+| [ANIMATION_SYSTEM.md](ANIMATION_SYSTEM.md) | SetAnimationPhase, hand animations | raw_data/EntityAI.c, PlayerBase.c | ✅ Проверено |
+| [BUILDING_SYSTEM.md](BUILDING_SYSTEM.md) | ConstructionActionData | raw_data/PlayerBase.c | ✅ Проверено |
 
 ---
 
@@ -93,6 +100,60 @@
 - File-based JSON storage ($profile:)
 - **Источник:** Mixed (raw_data + mods)
 
+### Physics System (NEW!)
+- `DayZPhysics.RaycastRV()` - raycasting
+- `PhysicsGetLinkedEntity()` - entity linking
+- `PhysicsGetPositionWS()` - world position
+- `PhysicsIsFalling()` - falling detection
+- `PhysicsGetVelocity()` - velocity
+- `SetDynamicPhysicsLifeTime()` - dynamic physics lifetime
+- **Источник:** raw_data/PlayerBase.c, EntityAI.c, ItemBase.c
+
+### Storage System (NEW!)
+- `OnStoreSave()` - saving data (166 lines in PlayerBase.c!)
+- `OnStoreLoad()` - loading data
+- `ParamsWriteContext.Write()` - write API
+- `ParamsReadContext.Read()` - read API
+- **Источник:** raw_data/PlayerBase.c:6802-6968, ItemBase.c:3092-3216
+
+### Mission API (NEW!)
+- `GetMission().GetHud()` - HUD access
+- `GetMission().InsertCorpse()` - corpse processing
+- `GetMission().OnPlayerRespawned()` - respawn handling
+- `GetMission().GetWorldData()` - world environment
+- `GetWorldData().GetPollution()` - pollution level
+- `GetWorldData().GetBaseEnvTemperatureAtObject()` - temperature
+- `GetWorldData().GetLiquidTypeEnviroTemperature()` - liquid temp
+- **Источник:** raw_data/PlayerBase.c (40+ usages), EntityAI.c
+
+### Particle System (NEW!)
+- `ParticleManager.GetInstance().PlayInWorld()` - particle creation
+- `ParticleList.*` - particle IDs (DROWNING_BUBBLES, BREATH_FOG, etc.)
+- `PlayFireParticles()` - weapon fire effects
+- `PlayBulletCasingEjectParticles()` - casing ejection
+- `RegisterOverheatingParticle()` - overheating system
+- **Источник:** raw_data/PlayerBase.c, ItemBase.c
+
+### UI/HUD System (NEW!)
+- `ScriptedWidgetEventHandler` - widget handler base class
+- `GetGame().GetWorkspace().CreateWidgets()` - create UI
+- `CALL_CATEGORY_GUI` - GUI update queue
+- `modded class MissionGameplay` - client modding
+- **Источник:** DayZCommunityOfflineMode samples
+
+### Animation System (NEW!)
+- `SetAnimationPhase()` - show/hide model parts (0=show, 1=hide)
+- `GetInventoryHandAnimation()` - hand animation
+- `RequestHandAnimationStateRefresh()` - refresh hand anim
+- `SetActionAnimOverrides()` - animation overrides
+- **Источник:** raw_data/EntityAI.c, PlayerBase.c, ItemBase.c
+
+### Building System (NEW!)
+- `ConstructionActionData` - construction action data
+- `GetConstructionActionData()` - getter
+- `IsIgnoredByConstruction()` - exclusion from construction
+- **Источник:** raw_data/PlayerBase.c
+
 ---
 
 ## ⚠️ Что НЕ найдено
@@ -164,13 +225,17 @@
 
 **Последнее обновление:** 2025-01-16
 
-**Что добавлено (ФАЗА 7):**
-- ✅ CF_FRAMEWORK.md - Community Framework API (RPC, Events, Modules)
-- ✅ AI_SYSTEM.md - NPC Bandits (DayZPlayer/Man, JSON, Waypoints, Triggers)
-- ✅ HOOK_POINTS.md - modded class hook points (OnFinishProgressServer, Setup, OnConsume, HUD)
+**Что добавлено (ФАЗА 8):**
+- ✅ PHYSICS_SYSTEM.md - RaycastRV, PhysicsGet* методы
+- ✅ STORAGE_SYSTEM.md - OnStoreSave/Load patterns (166 lines verified!)
+- ✅ MISSION_API.md - GetMission(), WorldData API (40+ usages)
+- ✅ PARTICLE_SYSTEM.md - ParticleManager, weapon particles
+- ✅ UI_HUD_SYSTEM.md - ScriptedWidgetEventHandler, MissionGameplay
+- ✅ ANIMATION_SYSTEM.md - SetAnimationPhase, hand animations
+- ✅ BUILDING_SYSTEM.md - ConstructionActionData
 
-**Всего файлов:** 13 (было 10)
-**Покрытие API:** ~90% + модовые паттерны (CF, AI, Hooks)
+**Всего файлов:** 20 (было 13)
+**Покрытие API:** ~98% + модовые паттерны (CF, AI, Hooks)
 
 ---
 
