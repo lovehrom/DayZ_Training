@@ -28,6 +28,9 @@
 | [UI_HUD_SYSTEM.md](UI_HUD_SYSTEM.md) | ScriptedWidgetEventHandler | DayZCommunityOfflineMode samples | ✅ Проверено |
 | [ANIMATION_SYSTEM.md](ANIMATION_SYSTEM.md) | SetAnimationPhase, hand animations | raw_data/EntityAI.c, PlayerBase.c | ✅ Проверено |
 | [BUILDING_SYSTEM.md](BUILDING_SYSTEM.md) | ConstructionActionData | raw_data/PlayerBase.c | ✅ Проверено |
+| [CF_RPC_SYSTEM.md](CF_RPC_SYSTEM.md) | CF RPC Manager | CF mod (1559212036) | ⚠️ Mod-derived |
+| [CF_EVENT_SYSTEM.md](CF_EVENT_SYSTEM.md) | CF Event Handler | CF mod (1559212036) | ⚠️ Mod-derived |
+| [CF_MODSTORAGE.md](CF_MODSTORAGE.md) | CF Persistent Storage | CF mod (1559212036) | ⚠️ Mod-derived |
 
 ---
 
