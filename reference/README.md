@@ -42,6 +42,15 @@
 | [VEHICLE_SYSTEMS.md](VEHICLE_SYSTEMS.md) | Vehicle Systems (pack/unpack) | BZ_Garage (3646080855) | ⚠️ Mod-derived |
 | [FACTION_SYSTEMS.md](FACTION_SYSTEMS.md) | Faction Systems (reputation, diseases) | TheHive (3572908305) | ⚠️ Mod-derived |
 | [BUILDING_SYSTEMS_MOD.md](BUILDING_SYSTEMS_MOD.md) | Building Systems (multi-door, kits) | DMT_Starter_Shed (3636106243) | ⚠️ Mod-derived |
+| [TELEPORTATION_SYSTEMS.md](TELEPORTATION_SYSTEMS.md) | Teleportation (JSON, paid) | GuideSystem, Pack a Punch (3595854441, 3569453138) | ⚠️ Mod-derived |
+| [CRAFTING_GUI_SYSTEMS.md](CRAFTING_GUI_SYSTEMS.md) | Crafting GUI Systems | CraftSystem, Material pack (3626433444, 3620127965) | ⚠️ Mod-derived |
+| [AUTO_STACK_MANAGEMENT.md](AUTO_STACK_MANAGEMENT.md) | Auto-Stack Management | Auto Stack - Proper (3639591480) | ⚠️ Mod-derived |
+| [PLAYER_MODIFIERS.md](PLAYER_MODIFIERS.md) | Player Modifiers (stamina, metabolism) | Redbull, SLP_Realistic (3643119261, 3578041032) | ⚠️ Mod-derived |
+| [ZOMBIE_CUSTOMIZATION.md](ZOMBIE_CUSTOMIZATION.md) | Zombie Customization (AI, loot) | Dutch_Bunker, Zombie Bears, Specimen (2718893193, 3116788142, 3645022168) | ⚠️ Mod-derived |
+| [LOOT_BOX_SYSTEMS.md](LOOT_BOX_SYSTEMS.md) | Loot Box Systems (random, weighted) | Material pack, Specimen (3620127965, 3645022168) | ⚠️ Mod-derived |
+| [TIME_BASED_EVENTS.md](TIME_BASED_EVENTS.md) | Time-Based Events (day/night) | SLP_Realistic_Ambient (3619503223) | ⚠️ Mod-derived |
+| [WEAPON_IMPROVEMENTS.md](WEAPON_IMPROVEMENTS.md) | Weapon Improvements (ADS preservation) | BetterBoltAction (3641964151) | ⚠️ Mod-derived |
+| [ARMOR_DAMAGE_SYSTEMS.md](ARMOR_DAMAGE_SYSTEMS.md) | Armor & Damage Systems | Striker Clothes, Waraeger (3645146626, 3633802307) | ⚠️ Mod-derived |
 
 ---
 
@@ -249,8 +258,21 @@
 - ✅ BUILDING_SYSTEMS_MOD.md - Building Systems (DMT_Starter_Shed)
 
 **Новая структура:** Группировка по функционалу, а не по модам
-**Всего файлов:** 32 (20 vanilla + 12 mod-derived)
-**Покрытие API:** ~95% + модовые паттерны
+**Всего файлов:** 42 (20 vanilla + 22 mod-derived)
+**Покрытие API:** ~98% + модовые паттерны
+
+**ФАЗА 9 - Batch 2 (NEW):**
+- ✅ TELEPORTATION_SYSTEMS.md - Teleportation (GuideSystem, Pack a Punch)
+- ✅ CRAFTING_GUI_SYSTEMS.md - Crafting GUI (CraftSystem, Material pack)
+- ✅ AUTO_STACK_MANAGEMENT.md - Auto-Stack Management
+- ✅ PLAYER_MODIFIERS.md - Player Modifiers (Redbull, SLP_Realistic)
+- ✅ ZOMBIE_CUSTOMIZATION.md - Zombie Customization (Dutch_Bunker, Zombie Bears, Specimen)
+- ✅ LOOT_BOX_SYSTEMS.md - Loot Box Systems (Material pack, Specimen)
+- ✅ TIME_BASED_EVENTS.md - Time-Based Events (SLP_Realistic_Ambient)
+- ✅ WEAPON_IMPROVEMENTS.md - Weapon Improvements (BetterBoltAction)
+- ✅ ARMOR_DAMAGE_SYSTEMS.md - Armor & Damage Systems (Striker Clothes, Waraeger)
+
+**Проанализировано модов:** 18/24 (75%)
 
 ---
 
