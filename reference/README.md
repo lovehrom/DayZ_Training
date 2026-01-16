@@ -18,6 +18,9 @@
 | [ENTITYAI_LIFECYCLE.md](ENTITYAI_LIFECYCLE.md) | EEInit, EEKilled, EEHealthLevelChanged | raw_data/EntityAI.c | ✅ Проверено |
 | [INVENTORY_SYSTEM.md](INVENTORY_SYSTEM.md) | GetInventory() паттерны | raw_data/EntityAI.c, PlayerBase.c | ✅ Проверено |
 | [TEMPERATURE_SYSTEM.md](TEMPERATURE_SYSTEM.md) | Temperature API | raw_data/EntityAI.c, PlayerBase.c | ✅ Проверено |
+| [CF_FRAMEWORK.md](CF_FRAMEWORK.md) | Community Framework API | CF mod (v1.1.0) | ⚠️ Mod-derived |
+| [AI_SYSTEM.md](AI_SYSTEM.md) | NPC Bandits AI | AI Bandits mod | ⚠️ Mod-derived |
+| [HOOK_POINTS.md](HOOK_POINTS.md) | modded class hook points | raw_data + mods | ⚠️ Mixed |
 
 ---
 
@@ -67,6 +70,28 @@
 - `JsonFileLoader<T>.JsonSaveFile(path, data)`
 - `JsonFileLoader<T>.JsonLoadFile(path, data)`
 - **Источник:** Community samples (не raw_data!)
+
+### CF Framework (NEW!)
+- `CF.RPC.SendRPC()` - namespace-based RPC
+- `[CF_RPCHandler]` - RPC handler атрибут
+- `CF_ModStorage` - persistent storage
+- `[CF_EventSubscriber]` - event system
+- **Источник:** CF mod (требует проверки)
+
+### AI System (NEW!)
+- DayZPlayer/Man based NPC hierarchy
+- JSON конфигурация (StaticAIB.json, DynamicAIB.json)
+- Waypoint patrol система
+- Trigger activation
+- **Источник:** AI Bandits mod (требует проверки)
+
+### Hook Points (NEW!)
+- `OnFinishProgressServer()` - crafting hooks
+- `Setup()` - continuous action hooks
+- `OnConsume()` - item consumption
+- modded class Hud - UI integration
+- File-based JSON storage ($profile:)
+- **Источник:** Mixed (raw_data + mods)
 
 ---
 
@@ -139,15 +164,13 @@
 
 **Последнее обновление:** 2025-01-16
 
-**Что добавлено (ФАЗА 6):**
-- ✅ SOUND_SYSTEM.md - SEffectManager, PlaySound* методы (15+ line numbers)
-- ✅ GETGAME_API.md - GetGame() паттерны (40+ использований)
-- ✅ ENTITYAI_LIFECYCLE.md - EEInit, EEKilled, EEHealthLevelChanged + DEPRECATED warning
-- ✅ INVENTORY_SYSTEM.md - GetInventory() паттерны (CreateInInventory, EnumerateInventory)
-- ✅ TEMPERATURE_SYSTEM.md - Temperature API (GetTemperature, SetTemperatureDirect, thresholds)
+**Что добавлено (ФАЗА 7):**
+- ✅ CF_FRAMEWORK.md - Community Framework API (RPC, Events, Modules)
+- ✅ AI_SYSTEM.md - NPC Bandits (DayZPlayer/Man, JSON, Waypoints, Triggers)
+- ✅ HOOK_POINTS.md - modded class hook points (OnFinishProgressServer, Setup, OnConsume, HUD)
 
-**Всего файлов:** 10 (было 5)
-**Покрытие API:** ~95% наиболее используемых методов
+**Всего файлов:** 13 (было 10)
+**Покрытие API:** ~90% + модовые паттерны (CF, AI, Hooks)
 
 ---
 
