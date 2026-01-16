@@ -31,6 +31,8 @@
 | [CF_RPC_SYSTEM.md](CF_RPC_SYSTEM.md) | CF RPC Manager | CF mod (1559212036) | ⚠️ Mod-derived |
 | [CF_EVENT_SYSTEM.md](CF_EVENT_SYSTEM.md) | CF Event Handler | CF mod (1559212036) | ⚠️ Mod-derived |
 | [CF_MODSTORAGE.md](CF_MODSTORAGE.md) | CF Persistent Storage | CF mod (1559212036) | ⚠️ Mod-derived |
+| [AI_NPC_CLASSES.md](AI_NPC_CLASSES.md) | NPC Bandits Classes | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
+| [AI_JSON_CONFIG.md](AI_JSON_CONFIG.md) | NPC JSON Configuration | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
 
 ---
 
