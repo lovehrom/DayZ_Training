@@ -1,0 +1,123 @@
+# DayZ Modding Knowledge Base
+
+## ⚡ Quick Start (30 seconds)
+
+**Хотите создать мод?** → [Начните здесь](topics/01_items.md)
+
+**У вас есть ошибка?** → [Ищите решение](troubleshooting/common_errors.md)
+
+**Нужно понять систему?** → [Карта тем](#all-topics)
+
+---
+
+## 🎯 Most Common Tasks
+
+| Задача | Где найти | Время |
+|--------|-----------|-------|
+| Создать предмет | [topics/01_items.md](topics/01_items.md) | 5 min |
+| Настроить config.cpp | [topics/02_config.md](topics/02_config.md) | 3 min |
+| Добавить действие | [topics/03_actions.md](topics/03_actions.md) | 10 min |
+| Настроить экономику | [topics/05_economy.md](topics/05_economy.md) | 5 min |
+| Создать рецепт | [topics/06_crafting.md](topics/06_crafting.md) | 10 min |
+
+---
+
+## 📋 All Topics
+
+### Core (80% задач)
+1. [Items: Создание предметов](topics/01_items.md)
+   - Edible, Consumable, Clothing, Weapon
+   - Properties, slots, attachments
+
+2. [Config: Конфигурация](topics/02_config.md)
+   - CfgPatches, CfgVehicles
+   - Наследование классов
+   - Models, animations
+
+3. [Economy: Настройка спавна](topics/05_economy.md)
+   - types.xml структура
+   - Nominal, min, max
+   - Spawn zones
+
+4. [Crafting: Рецепты крафта](topics/06_crafting.md)
+   - ActionCombination
+   - CanCombine, recipes
+
+### Intermediate (15% задач)
+5. [Actions: Действия игрока](topics/03_actions.md)
+   - ActionBase, ActionSingle
+   - CreateActionComponent
+   - ActionCondition
+
+6. [PlayerBase: Модификация игрока](topics/04_playerbase.md)
+   - modded class
+   - OnInit, OnUpdate
+   - Health, states
+
+7. [Events: ScriptInvoker](topics/07_events.md)
+   - Создание событий
+   - OnPlayerSpawned, etc.
+
+### Expert (5% задач)
+8. [Network: RPC и синхронизация](topics/08_network.md)
+   - Server/Client RPC
+   - Synchronized variables
+
+9. [UI: Интерфейс и HUD](topics/09_ui.md)
+   - Виджеты
+   - Layouts
+
+10. [AI: Зомби и животные](topics/10_ai.md)
+    - ZombieBase, AnimalBase
+    - AI поведения
+
+---
+
+## 💡 Examples
+
+Полные рабочие моды:
+- [examples/minimal_item/](examples/minimal_item/) - Минимальный предмет
+- [examples/edible_item/](examples/edible_item/) - Еда
+- [examples/weapon/](examples/weapon/) - Оружие
+- [examples/crafting/](examples/crafting/) - Крафтинг
+- [examples/action/](examples/action/) - Кастомное действие
+
+---
+
+## 🔧 Troubleshooting
+
+- [common_errors.md](troubleshooting/common_errors.md) - Типичные ошибки
+- [debug_checklist.md](troubleshooting/debug_checklist.md) - Чеклист отладки
+- [performance.md](troubleshooting/performance.md) - Оптимизация
+
+---
+
+## 🔍 Search Guide
+
+→ [Как искать информацию](01_SEARCH_GUIDE.md)
+
+**Быстрый поиск:**
+1. Нажмите Ctrl+F
+2. Введите английский ИЛИ русский термин
+3. Используйте якорные ссылки (#heading)
+
+**Примеры поиска:**
+- "создать предмет" → topics/01_items.md
+- "Class not found" → troubleshooting/common_errors.md#class-not-found
+- "RPC" → topics/08_network.md
+
+---
+
+## 📦 Raw Data
+
+Сырые файлы из игры (для reference):
+- [raw_data/game_config.cpp](raw_data/game_config.cpp) - Полный config
+- [raw_data/EntityAI.c](raw_data/EntityAI.c) - Базовый класс
+- [raw_data/ItemBase.c](raw_data/ItemBase.c) - Базовый предмет
+- [raw_data/PlayerBase.c](raw_data/PlayerBase.c) - Игрок
+- [raw_data/actions_examples/](raw_data/actions_examples/) - Action* примеры
+
+---
+
+*Последнее обновление: 2025-01-16*
+*Версия DayZ: [Требуется уточнение]*
