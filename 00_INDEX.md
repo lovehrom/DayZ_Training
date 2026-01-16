@@ -10,10 +10,12 @@
 
 ---
 
-## 🎯 Most Common Tasks
+## 🛠️ Tools & Setup
 
 | Задача | Где найти | Время |
 |--------|-----------|-------|
+| **Настроить окружение** | [tools/WORKBENCH_SETUP.md](tools/WORKBENCH_SETUP.md) | 15 min |
+| **Офлайн тестирование** | [tools/OFFLINE_MODE.md](tools/OFFLINE_MODE.md) | 5 min |
 | Создать предмет | [topics/01_items.md](topics/01_items.md) | 5 min |
 | Настроить config.cpp | [topics/02_config.md](topics/02_config.md) | 3 min |
 | Добавить действие | [topics/03_actions.md](topics/03_actions.md) | 10 min |
@@ -105,19 +107,30 @@
 - "создать предмет" → topics/01_items.md
 - "Class not found" → troubleshooting/common_errors.md#class-not-found
 - "RPC" → topics/08_network.md
+- "offline mode" → tools/OFFLINE_MODE.md
+- "workbench" → tools/WORKBENCH_SETUP.md
 
 ---
 
 ## 📦 Raw Data
 
 Сырые файлы из игры (для reference):
+- [raw_data/PATTERNS_ANALYSIS.md](raw_data/PATTERNS_ANALYSIS.md) - **Анализ паттернов** ⭐
 - [raw_data/game_config.cpp](raw_data/game_config.cpp) - Полный config
 - [raw_data/EntityAI.c](raw_data/EntityAI.c) - Базовый класс
 - [raw_data/ItemBase.c](raw_data/ItemBase.c) - Базовый предмет
 - [raw_data/PlayerBase.c](raw_data/PlayerBase.c) - Игрок
+- [raw_data/Man.c](raw_data/Man.c) - Человек
 - [raw_data/actions_examples/](raw_data/actions_examples/) - Action* примеры
+
+## 🔧 External Samples
+
+Дополнительные примеры и инструменты:
+- [samples/DayZCommunityOfflineMode/](samples/DayZCommunityOfflineMode/) - Офлайн режим для тестирования
+- [samples/ZenTemplate/](samples/ZenTemplate/) - Шаблон мода с Workbench setup
+- [samples/official/](samples/official/) - Официальные DayZ-Samples от Bohemia
 
 ---
 
 *Последнее обновление: 2025-01-16*
-*Версия DayZ: [Требуется уточнение]*
+*Версия DayZ: 1.26 (estimated)*
