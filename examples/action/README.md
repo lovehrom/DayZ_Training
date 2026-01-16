@@ -23,6 +23,7 @@
 
 - `config.cpp` - Конфигурация мода (регистрация action)
 - `scripts/3_Game/Actions/ActionWaveHello.c` - Код действия
+- `scripts/4_World/Entities/ManBase/PlayerBase.c` - **Модификация PlayerBase для регистрации действия**
 
 ## Структура
 
@@ -30,9 +31,13 @@
 @ActionExample/
 ├── config.cpp
 └── scripts/
-    └── 3_Game/
-        └── Actions/
-            └── ActionWaveHello.c
+    ├── 3_Game/
+    │   └── Actions/
+    │       └── ActionWaveHello.c
+    └── 4_World/
+        └── Entities/
+            └── ManBase/
+                └── PlayerBase.c  ← КРИТИЧНО! Без этого действие не зарегистрируется
 ```
 
 ## Как это работает
@@ -120,16 +125,21 @@ modded class MyItem extends ItemBase
 
 ### Добавить действие к игроку
 
+**ВАЖНО!** Этот код УЖЕ ЕСТЬ в `scripts/4_World/Entities/ManBase/PlayerBase.c`
+
 ```c
+// Файл: scripts/4_World/Entities/ManBase/PlayerBase.c
 modded class PlayerBase
 {
-    override void SetActions()
+    override void SetActions(out TInputActionMap InputActionMap)
     {
-        super.SetActions();
-        AddAction(ActionWaveHello);  // Добавить действие
+        super.SetActions(InputActionMap);
+        AddAction(ActionWaveHello);  // ← Это добавляет действие в игру
     }
-};
+}
 ```
+
+**Без этого файла действие НЕ появится в меню!**
 
 ## Связанные темы
 
@@ -138,8 +148,9 @@ modded class PlayerBase
 
 ## Известные ограничения
 
-- Требуется модификация PlayerBase или ItemBase для интеграции
+- ⚠️ **КРИТИЧНО:** Требуется модификация PlayerBase (файл включён в пример)
 - Анимация помахивания не реализована (только каркас)
+- Действие будет доступно в контекстном меню игрока
 
 ## Следующие шаги
 
