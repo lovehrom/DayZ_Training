@@ -34,13 +34,14 @@
 | [AI_NPC_CLASSES.md](AI_NPC_CLASSES.md) | NPC Bandits Classes | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
 | [AI_JSON_CONFIG.md](AI_JSON_CONFIG.md) | NPC JSON Configuration | AI Bandits mod (3628006769) | ⚠️ Mod-derived |
 | [NOTIFICATION_SYSTEM.md](NOTIFICATION_SYSTEM.md) | Player Notifications RPC | NotificationsSystem (3624261153) | ⚠️ Mod-derived |
-| [SLIVERWEAPONS_CUSTOM_RPC.md](SLIVERWEAPONS_CUSTOM_RPC.md) | Global Sound Broadcast RPC | SliverWeapons (3644228096) | ⚠️ Mod-derived |
-| [SLIVERWEAPONS_CUSTOM_RECOIL.md](SLIVERWEAPONS_CUSTOM_RECOIL.md) | Override SpawnRecoilObject() | SliverWeapons (3644228096) | ⚠️ Mod-derived |
-| [ZENSKILLS_XP_SYSTEM.md](ZENSKILLS_XP_SYSTEM.md) | XP/Skill System with 40 Perks | ZenSkills (3601119520) | ⚠️ Mod-derived |
-| [ENDERCHEST_STORAGE.md](ENDERCHEST_STORAGE.md) | Cross-Server Personal Storage | EnderChest (3601774845) | ⚠️ Mod-derived |
-| [BZ_GARAGE_VEHICLE.md](BZ_GARAGE_VEHICLE.md) | Vehicle Pack/Unpack System | BZ_Garage (3646080855) | ⚠️ Mod-derived |
-| [THEHIVE_FACTIONS.md](THEHIVE_FACTIONS.md) | Faction System with Diseases | TheHive (3572908305) | ⚠️ Mod-derived |
-| [DMT_BUILDING_KITS.md](DMT_BUILDING_KITS.md) | Two-Door Building System | DMT_Starter_Shed (3636106243) | ⚠️ Mod-derived |
+| **Mod-derived API (grouped by functionality)** ⚠️ |
+| [CUSTOM_RPC.md](CUSTOM_RPC.md) | Custom RPC Systems (broadcast, sounds) | SliverWeapons, NotificationsSystem (3644228096, 3624261153) | ⚠️ Mod-derived |
+| [WEAPON_CUSTOMIZATION.md](WEAPON_CUSTOMIZATION.md) | Weapon Customization (recoil, sounds) | SliverWeapons (3644228096) | ⚠️ Mod-derived |
+| [XP_SKILL_SYSTEMS.md](XP_SKILL_SYSTEMS.md) | XP & Skill Systems | ZenSkills (3601119520) | ⚠️ Mod-derived |
+| [PERSISTENT_STORAGE.md](PERSISTENT_STORAGE.md) | Persistent Storage (cross-server, recursive) | EnderChest, CF (3601774845, 1559212036) | ⚠️ Mod-derived |
+| [VEHICLE_SYSTEMS.md](VEHICLE_SYSTEMS.md) | Vehicle Systems (pack/unpack) | BZ_Garage (3646080855) | ⚠️ Mod-derived |
+| [FACTION_SYSTEMS.md](FACTION_SYSTEMS.md) | Faction Systems (reputation, diseases) | TheHive (3572908305) | ⚠️ Mod-derived |
+| [BUILDING_SYSTEMS_MOD.md](BUILDING_SYSTEMS_MOD.md) | Building Systems (multi-door, kits) | DMT_Starter_Shed (3636106243) | ⚠️ Mod-derived |
 
 ---
 
@@ -238,17 +239,18 @@
 
 **Последнее обновление:** 2025-01-16
 
-**Что добавлено (ФАЗА 9):**
-- ✅ SLIVERWEAPONS_CUSTOM_RPC.md - Global sound broadcast RPC (RPC_ADMINHAMMER_KILL_SOUND = 77801)
-- ✅ SLIVERWEAPONS_CUSTOM_RECOIL.md - Override SpawnRecoilObject() (M300 → CZ527Recoil)
-- ✅ ZENSKILLS_XP_SYSTEM.md - XP/Skill system (4 trees, 40 perks, JSON persistence)
-- ✅ ENDERCHEST_STORAGE.md - Cross-server personal storage (Steam64 based, recursive inventory)
-- ✅ BZ_GARAGE_VEHICLE.md - Vehicle pack/unpack (BZ_InvNode, food state preservation)
-- ✅ THEHIVE_FACTIONS.md - Faction system (5 factions, disease modifiers, reputation)
-- ✅ DMT_BUILDING_KITS.md - Two-door building system (instant craft, codelock support)
+**Что добавлено (ФАЗА 9 - Restructured):**
+- ✅ CUSTOM_RPC.md - Custom RPC Systems (SliverWeapons, NotificationsSystem)
+- ✅ WEAPON_CUSTOMIZATION.md - Weapon Customization (recoil override)
+- ✅ XP_SKILL_SYSTEMS.md - XP & Skill Systems (ZenSkills)
+- ✅ PERSISTENT_STORAGE.md - Persistent Storage (EnderChest, CF)
+- ✅ VEHICLE_SYSTEMS.md - Vehicle Systems (BZ_Garage pack/unpack)
+- ✅ FACTION_SYSTEMS.md - Faction Systems (TheHive)
+- ✅ BUILDING_SYSTEMS_MOD.md - Building Systems (DMT_Starter_Shed)
 
-**Всего файлов:** 32 (было 20)
-**Покрытие API:** ~95% + модовые паттерны (CF, AI, Weapons, Skills, Storage, Factions, Buildings)
+**Новая структура:** Группировка по функционалу, а не по модам
+**Всего файлов:** 32 (20 vanilla + 12 mod-derived)
+**Покрытие API:** ~95% + модовые паттерны
 
 ---
 
