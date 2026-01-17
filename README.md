@@ -20,7 +20,7 @@
 DayZ_Training/
 ├── 00_INDEX.md              # Главная карта (начните здесь!)
 ├── 01_SEARCH_GUIDE.md       # Как искать информацию
-├── topics/                  # Все темы (10 штук)
+├── topics/                  # Все темы (15 штук)
 │   ├── 01_items.md         # Создание предметов
 │   ├── 02_config.md        # Конфигурация
 │   ├── 03_actions.md       # Действия игрока
@@ -30,12 +30,25 @@ DayZ_Training/
 │   ├── 07_events.md        # События
 │   ├── 08_network.md       # RPC и сеть
 │   ├── 09_ui.md            # Интерфейс
-│   └── 10_ai.md            # AI зомби и животных
+│   ├── 10_ai.md            # AI зомби и животных
+│   ├── 11_advanced_modding.md  # Advanced mechanics (Phase 9)
+│   ├── 12_xp_systems.md    # XP и Skill системы
+│   ├── 13_teleportation.md # Телепортация
+│   ├── 14_storage.md       # Persistent storage
+│   └── 15_zombie_ai.md     # Custom NPC
 ├── examples/                # Рабочие примеры
 │   └── minimal_item/       # Минимальный предмет
 ├── troubleshooting/         # Решение проблем
 │   └── common_errors.md    # Типичные ошибки
-└── raw_data/               # Сырые данные (пока пусто)
+├── raw_data/               # Сырые данные из игры (EntityAI.c, PlayerBase.c, etc.)
+│   ├── EntityAI.c         # Базовый класс всех объектов (132 KB)
+│   ├── ItemBase.c         # Базовый класс предметов (140 KB)
+│   ├── PlayerBase.c       # Класс игрока (270 KB)
+│   └── Man.c              # Базовый класс человека (36 KB)
+└── reference/              # Advanced mechanics (42 файла)
+    ├── CF_RPC_SYSTEM.md    # Community Framework RPC
+    ├── XP_SKILL_SYSTEMS.md # XP системы
+    └── ... (40 файлов)
 ```
 
 ---
