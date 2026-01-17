@@ -1,0 +1,468 @@
+# AI FAQ - Quick Answers
+
+**Purpose:** Instant answers to common questions
+**For:** AI to answer without searching
+**Last Updated:** 2025-01-17
+
+---
+
+## 🎯 MOST COMMON QUESTIONS
+
+### Q: How to create XP system?
+**A:** Use examples/xp_system/
+1. Copy files to your project
+2. Add to config.cpp
+3. Server restart
+**Details:** topics/12_xp_systems.md
+**API:** API_SIGNATURES.md → XP SYSTEM
+**Pattern:** PATTERNS.md → PATTERN 1, 9, 14
+
+---
+
+### Q: How to create custom NPC?
+**A:** Use examples/custom_zombie/
+1. Extend InfectedBanditBase (NOT AnimalBase!)
+2. Load config from JSON
+3. Spawn loot in EEKilled()
+**Details:** topics/15_zombie_ai.md
+**Code:** examples/custom_zombie/scripts/.../CustomBandit.c
+**⚠️ CRITICAL:** Always use InfectedBanditBase, never AnimalBase!
+
+---
+
+### Q: How to make cross-server storage?
+**A:** Use examples/storage/
+1. Steam64 ID-based storage
+2. Recursive save (attachments, cargo)
+3. JSON persistence at $profile:
+**Details:** topics/14_storage.md
+**API:** API_SIGNATURES.md → STORAGE
+**Pattern:** PATTERNS.md → PATTERN 4
+
+---
+
+### Q: How to teleport player?
+**A:** Use examples/teleportation/
+1. Command: `/tp <location>`
+2. JSON config at $profile:teleports.json
+3. Safety checks (not in vehicle, etc.)
+**Details:** topics/13_teleportation.md
+**API:** API_SIGNATURES.md → TELEPORTATION
+**Pattern:** PATTERNS.md → PATTERN 5, 13
+
+---
+
+### Q: Which base class for NPC?
+**A:** **InfectedBanditBase** (never AnimalBase!)
+**Why:**
+- ✅ Correct animations
+- ✅ Proper AI behavior
+- ✅ Vanilla compatibility
+**Example:** examples/custom_zombie/scripts/.../CustomBandit.c
+
+---
+
+### Q: How to save player data?
+**A:** Use JSON persistence
+**Pattern:** PATTERNS.md → PATTERN 2
+**File path:** `$profile:data_{steam64}.json`
+**Code:**
+```c
+string steam64 = player.GetIdentity().GetId();
+string filePath = "$profile:data_" + steam64 + ".json";
+JsonFileLoader<Data>::JsonSaveFile(filePath, data);
+```
+
+---
+
+### Q: How to get player Steam64 ID?
+**A:**
+```c
+string steam64 = player.GetIdentity().GetId();
+```
+**Use for:** Player-specific data, storage, etc.
+
+---
+
+### Q: How to give XP for action?
+**A:** Override event handler
+**Pattern:** PATTERNS.md → PATTERN 3
+**Example (kill):**
+```c
+override void EEKilled(Object killer) {
+    super.EEKilled();
+    if (killer && killer.IsPlayer()) {
+        PlayerBase player = PlayerBase.Cast(killer);
+        player.m_SkillManager.AddXP("Combat", 10);
+    }
+}
+```
+
+---
+
+### Q: How to stack items automatically?
+**A:** Use examples/auto_stack/
+**Trigger:** OnInventoryEnter()
+**Pattern:** PATTERNS.md → PATTERN 15
+**Code:** examples/auto_stack/scripts/.../playerbase_autostack.c
+
+---
+
+### Q: How to create weighted loot table?
+**A:** Use weighted random
+**Pattern:** PATTERNS.md → PATTERN 6
+**Example:**
+```c
+class LootEntry { string Name; float Weight; }
+// Weights: 50, 30, 20 = 50%, 30%, 20% (not 0.5, 0.3, 0.2)
+```
+
+---
+
+### Q: How to handle chat commands?
+**A:** Override OnChat()
+**Pattern:** PATTERNS.md → PATTERN 5
+**Example:**
+```c
+override bool OnChat(PlayerBase player, string message) {
+    if (super.OnChat(player, message)) return true;
+    if (message.StartsWith("/cmd ")) {
+        HandleCommand(message.Substring(5));
+        return true;
+    }
+    return false;
+}
+```
+
+---
+
+### Q: How to find nearest player?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 7
+```c
+PlayerBase FindNearest(vector pos, float maxDist = 100) {
+    array<PlayerBase> players = new array<PlayerBase>;
+    GetGame().GetPlayers(players);
+    PlayerBase nearest = null;
+    float minDist = maxDist;
+    foreach (PlayerBase p : players) {
+        float d = vector.Distance(pos, p.GetPosition());
+        if (d < minDist) { minDist = d; nearest = p; }
+    }
+    return nearest;
+}
+```
+
+---
+
+### Q: How to add cooldown?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 8
+```c
+protected float m_LastTime;
+protected const float COOLDOWN = 5.0;
+bool CanUse() {
+    return (GetGame().GetTickTime() - m_LastTime) >= COOLDOWN;
+}
+```
+
+---
+
+### Q: How to show notification to player?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 12
+```c
+Param1<string> msg = new Param1<string>("Message");
+GetGame().RPCSingleParam(player, ERPCs.RPC_USER_ACTION_MESSAGE, msg, true, player.GetIdentity());
+```
+
+---
+
+### Q: How to check if item is stackable?
+**A:**
+```c
+bool IsStackable(ItemBase item) {
+    if (!item) return false;
+    if (item.IsInherited(Magazine)) return false;
+    if (item.IsInherited(Weapon)) return false;
+    if (item.GetInventory().GetCargo()) return false;
+    return item.GetQuantity() > 0 && item.GetQuantity() < item.GetQuantityMax();
+}
+```
+
+---
+
+### Q: How to recursively save items?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 4
+**Full code:** examples/storage/scripts/.../StorageManager.c:50
+**Key:** Handle attachments AND cargo
+
+---
+
+### Q: How to spawn item?
+**A:**
+```c
+EntityAI item = GetGame().CreateObject("ClassName", position);
+// OR
+EntityAI item = GetGame().CreateObjectEx("ClassName", position, ECE_PLACE_ON_SURFACE);
+```
+
+---
+
+### Q: How to delete item?
+**A:**
+```c
+GetGame().ObjectDelete(item);
+```
+
+---
+
+### Q: How to get all items in inventory?
+**A:**
+```c
+array<EntityAI> items = new array<EntityAI>;
+inventory.EnumerateInventory(InventoryTraversalType.PREORDER, items);
+```
+
+---
+
+### Q: How to cast EntityAI to ItemBase?
+**A:**
+```c
+ItemBase item = ItemBase.Cast(entity);
+if (item) {
+    // Successfully cast
+}
+```
+
+---
+
+### Q: How to check if object is player?
+**A:**
+```c
+if (entity.IsMan()) {
+    Man man = entity.CastToMan();
+    if (man.IsPlayer()) {
+        PlayerBase player = PlayerBase.Cast(man);
+        // Use player
+    }
+}
+```
+
+---
+
+### Q: How to get game time?
+**A:**
+```c
+float time = GetGame().GetTickTime(); // Server time in seconds
+```
+
+---
+
+### Q: How to check if file exists?
+**A:**
+```c
+if (FileExist("$profile:config.json")) {
+    // File exists
+}
+```
+
+---
+
+### Q: Where to save player data?
+**A:** `$profile:` folder
+**Examples:**
+- `$profile:skills_{steam64}.json`
+- `$profile:storage_{steam64}.json`
+- `$profile:teleports.json`
+
+---
+
+### Q: How to create manager class?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 14
+**Structure:**
+```c
+class CustomManager {
+    protected PlayerBase m_Player;
+    void CustomManager(PlayerBase player) { m_Player = player; Load(); }
+    void Load() { /* Load JSON */ }
+    void Save() { /* Save JSON */ }
+    void DoAction() { /* Game logic */ }
+}
+```
+
+---
+
+### Q: How to integrate manager in PlayerBase?
+**A:**
+**Pattern:** PATTERNS.md → PATTERN 1
+```c
+modded class PlayerBase {
+    protected CustomManager m_Manager;
+    override void OnConnect() {
+        super.OnConnect();
+        m_Manager = new CustomManager(this);
+    }
+    override void OnDisconnect() {
+        super.OnDisconnect();
+        if (m_Manager) m_Manager.Save();
+    }
+}
+```
+
+---
+
+### Q: What order to call super methods?
+**A:**
+**OnConnect(), OnDisconnect(), OnUpdate():** Call super FIRST
+**EEKilled(), EEHitBy(), EE*():** Call super FIRST
+**OnChat():** Call super FIRST, check return value
+
+**Example:**
+```c
+override void OnConnect() {
+    super.OnConnect(); // ALWAYS FIRST
+    // Your code
+}
+```
+
+---
+
+### Q: How to create custom event?
+**A:**
+```c
+modded class PlayerBase {
+    override void SomeEvent() {
+        super.SomeEvent();
+        // Your custom logic
+        if (m_Manager) {
+            m_Manager.OnSomeEvent();
+        }
+    }
+}
+```
+
+---
+
+### Q: How to make GUI crafting?
+**A:**
+**Reference:** reference/CRAFTING_GUI_SYSTEMS.md
+**Note:** Complex, requires modded CraftingManager
+
+---
+
+### Q: How to create faction system?
+**A:**
+**Reference:** reference/FACTION_SYSTEMS.md
+**Source:** TheHive mod (3572908305)
+
+---
+
+### Q: How to add custom animations?
+**A:**
+**Reference:** reference/ANIMATION_SYSTEM.md
+**Complex:** High
+
+---
+
+### Q: How to create loot box?
+**A:**
+**Reference:** reference/LOOT_BOX_SYSTEMS.md
+**Pattern:** PATTERNS.md → PATTERN 6 (weighted random)
+
+---
+
+### Q: How to make time-based events?
+**A:**
+**Reference:** reference/TIME_BASED_EVENTS.md
+**Key:** GetGame().GetWorld().GetWorldTime()
+**Format:** 0-24 (6.0 = 6 AM, 20.0 = 8 PM)
+
+---
+
+### Q: How to modify weapon recoil?
+**A:**
+**Reference:** reference/WEAPON_CUSTOMIZATION.md
+**Method:** Override SpawnRecoilObject()
+
+---
+
+### Q: How to preserve ADS on reload?
+**A:**
+**Reference:** reference/WEAPON_IMPROVEMENTS.md
+**Source:** BetterBoltAction (3641964151)
+
+---
+
+### Q: How to add armor to clothing?
+**A:**
+**Reference:** reference/ARMOR_DAMAGE_SYSTEMS.md
+**Key:** DamageModifiers in config.cpp
+
+---
+
+### Q: How to use Community Framework (CF)?
+**A:**
+**Reference:** reference/CF_RPC_SYSTEM.md
+**Key Features:**
+- Namespace RPC (no numeric IDs)
+- Attribute events
+- Simplified storage
+
+---
+
+### Q: What are common pitfalls?
+**A:**
+1. ❌ Using AnimalBase for NPC → Use InfectedBanditBase
+2. ❌ Forgetting super.OnConnect() → Always call first
+3. ❌ Hardcoded paths → Use $profile:
+4. ❌ Not checking null → Always validate
+5. ❌ Not saving data → Save in OnDisconnect()
+
+---
+
+### Q: How to get started?
+**A:**
+1. Read: 00_INDEX.md
+2. Choose example: examples/
+3. Copy to your project
+4. Modify as needed
+
+---
+
+### Q: Where to find specific mechanic?
+**A:**
+1. Check: MASTER_INDEX.md (read this first!)
+2. Search: search_index.md
+3. Deep dive: reference/
+
+---
+
+### Q: How to report bug?
+**A:**
+Check: troubleshooting/common_errors.md
+
+---
+
+## 🔥 CRITICAL REMINDERS
+
+### ALWAYS:
+1. ✅ Call super.EVENT() first
+2. ✅ Check null before using
+3. ✅ Use InfectedBanditBase for NPC
+4. ✅ Use $profile: for files
+5. ✅ Save data in OnDisconnect()
+
+### NEVER:
+1. ❌ Use AnimalBase for NPC
+2. ❌ Forget super methods
+3. ❌ Hardcode paths
+4. ❌ Skip null checks
+5. ❌ Forget to save
+
+---
+
+*Last Updated: 2025-01-17*
+*Purpose: AI instant answers without searching*
