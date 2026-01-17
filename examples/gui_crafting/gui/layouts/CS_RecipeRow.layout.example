@@ -1,0 +1,274 @@
+<!-- CS_RecipeRow.layout - Single recipe row layout -->
+<!-- Place in: dta/gui/CraftSystem/Scripts/GUI/Layouts/ -->
+<!-- Shows up to 5 ingredients + result + craft button -->
+
+<Widget layout="Horizontal">
+    <Size x="700" y="120" />
+
+    <!-- ========== ITEM 1 ========== -->
+    <Widget Name="PanelItem1">
+        <Size x="130" y="120" />
+
+        <!-- Item preview -->
+        <ItemPreviewWidget Name="PreviewItem1">
+            <Pos x="15" y="10" />
+            <Size x="100" y="60" />
+            <Color color="ARGB(255, 40, 40, 40)" />
+        </ItemPreviewWidget>
+
+        <!-- Name background -->
+        <Widget Name="PanelNameBG1">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Color color="ARGB(100, 255, 0, 0)" />
+        </Widget>
+
+        <!-- Name text -->
+        <TextWidget Name="TextName1">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Item Name" align="center" size="10" />
+            <Color color="ARGB(255, 255, 255, 255)" />
+        </TextWidget>
+
+        <!-- Quantity background -->
+        <Widget Name="PanelQtyBG1">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Color color="ARGB(100, 255, 0, 0)" />
+        </Widget>
+
+        <!-- Quantity text -->
+        <TextWidget Name="TextQty1">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+            <Color color="ARGB(255, 255, 255, 255)" />
+        </TextWidget>
+
+        <!-- Plus sign -->
+        <TextWidget Name="TextPlus1">
+            <Pos x="120" y="50" />
+            <Size x="10" y="20" />
+            <Text text="+" align="center" size="14" />
+            <Color color="ARGB(255, 200, 200, 200)" />
+        </TextWidget>
+    </Widget>
+
+    <!-- ========== ITEM 2 ========== -->
+    <Widget Name="PanelItem2">
+        <Size x="130" y="120" />
+        <Visible>0</Visible> <!-- Hidden by default -->
+
+        <ItemPreviewWidget Name="PreviewItem2">
+            <Pos x="15" y="10" />
+            <Size x="100" y="60" />
+            <Color color="ARGB(255, 40, 40, 40)" />
+        </ItemPreviewWidget>
+
+        <Widget Name="PanelNameBG2">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Color color="ARGB(100, 255, 0, 0)" />
+        </Widget>
+
+        <TextWidget Name="TextName2">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Item Name" align="center" size="10" />
+            <Color color="ARGB(255, 255, 255, 255)" />
+        </TextWidget>
+
+        <Widget Name="PanelQtyBG2">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Color color="ARGB(100, 255, 0, 0)" />
+        </Widget>
+
+        <TextWidget Name="TextQty2">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+            <Color color="ARGB(255, 255, 255, 255)" />
+        </TextWidget>
+
+        <TextWidget Name="TextPlus2">
+            <Pos x="120" y="50" />
+            <Size x="10" y="20" />
+            <Text text="+" align="center" size="14" />
+            <Color color="ARGB(255, 200, 200, 200)" />
+        </TextWidget>
+    </Widget>
+
+    <!-- ========== ITEM 3 ========== -->
+    <Widget Name="PanelItem3">
+        <Size x="130" y="120" />
+        <Visible>0</Visible>
+
+        <ItemPreviewWidget Name="PreviewItem3">
+            <Pos x="15" y="10" />
+            <Size x="100" y="60" />
+        </ItemPreviewWidget>
+
+        <Widget Name="PanelNameBG3">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+        </Widget>
+
+        <TextWidget Name="TextName3">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Item Name" align="center" size="10" />
+        </TextWidget>
+
+        <Widget Name="PanelQtyBG3">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+        </Widget>
+
+        <TextWidget Name="TextQty3">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+        </TextWidget>
+
+        <TextWidget Name="TextPlus3">
+            <Pos x="120" y="50" />
+            <Size x="10" y="20" />
+            <Text text="+" align="center" size="14" />
+        </TextWidget>
+    </Widget>
+
+    <!-- ========== ITEM 4 ========== -->
+    <Widget Name="PanelItem4">
+        <Size x="130" y="120" />
+        <Visible>0</Visible>
+
+        <ItemPreviewWidget Name="PreviewItem4">
+            <Pos x="15" y="10" />
+            <Size x="100" y="60" />
+        </ItemPreviewWidget>
+
+        <Widget Name="PanelNameBG4">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+        </Widget>
+
+        <TextWidget Name="TextName4">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Item Name" align="center" size="10" />
+        </TextWidget>
+
+        <Widget Name="PanelQtyBG4">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+        </Widget>
+
+        <TextWidget Name="TextQty4">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+        </TextWidget>
+
+        <TextWidget Name="TextPlus4">
+            <Pos x="120" y="50" />
+            <Size x="10" y="20" />
+            <Text text="+" align="center" size="14" />
+        </TextWidget>
+    </Widget>
+
+    <!-- ========== ITEM 5 ========== -->
+    <Widget Name="PanelItem5">
+        <Size x="130" y="120" />
+        <Visible>0</Visible>
+
+        <ItemPreviewWidget Name="PreviewItem5">
+            <Pos x="15" y="10" />
+            <Size x="100" y="60" />
+        </ItemPreviewWidget>
+
+        <Widget Name="PanelNameBG5">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+        </Widget>
+
+        <TextWidget Name="TextName5">
+            <Pos x="15" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Item Name" align="center" size="10" />
+        </TextWidget>
+
+        <Widget Name="PanelQtyBG5">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+        </Widget>
+
+        <TextWidget Name="TextQty5">
+            <Pos x="15" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+        </TextWidget>
+    </Widget>
+
+    <!-- ========== RESULT + BUTTON ========== -->
+    <Widget>
+        <Size x="120" y="120" />
+
+        <!-- Equals sign -->
+        <TextWidget>
+            <Pos x="-10" y="50" />
+            <Size x="10" y="20" />
+            <Text text="=" align="center" size="14" />
+            <Color color="ARGB(255, 200, 200, 200)" />
+        </TextWidget>
+
+        <!-- Result preview -->
+        <ItemPreviewWidget Name="PreviewResult">
+            <Pos x="10" y="10" />
+            <Size x="100" y="60" />
+            <Color color="ARGB(255, 40, 80, 40)" />
+        </ItemPreviewWidget>
+
+        <!-- Result name background -->
+        <Widget Name="PanelNameBGResult">
+            <Pos x="10" y="5" />
+            <Size x="100" y="20" />
+            <Color color="ARGB(100, 0, 150, 0)" />
+        </Widget>
+
+        <!-- Result name -->
+        <TextWidget Name="TextResultName">
+            <Pos x="10" y="5" />
+            <Size x="100" y="20" />
+            <Text text="Result" align="center" size="10" />
+            <Color color="ARGB(255, 255, 255, 255)" />
+        </TextWidget>
+
+        <!-- Result quantity -->
+        <TextWidget Name="TextResultQty">
+            <Pos x="10" y="72" />
+            <Size x="100" y="18" />
+            <Text text="x1" align="center" size="10" />
+            <Color color="ARGB(255, 200, 255, 200)" />
+        </TextWidget>
+
+        <!-- Craft button -->
+        <ButtonWidget Name="ButtonCraft">
+            <Pos x="10" y="92" />
+            <Size x="100" y="25" />
+            <Text text="CRAFT" align="center" size="12" />
+            <Color color="ARGB(255, 62, 174, 70)" />
+            <HoverColor color="ARGB(255, 82, 194, 90)" />
+            <PressedColor color="ARGB(255, 42, 154, 50)" />
+        </ButtonWidget>
+    </Widget>
+</Widget>
+
+<!-- NOTES:
+- Supports up to 5 ingredients (adjust visibility in code)
+- Each ingredient has: preview, name, quantity, background color
+- Color coding: Red (missing) / Green (available)
+- Result shows on right with craft button
+- Use WrapSpacerWidget to arrange rows vertically
+-->

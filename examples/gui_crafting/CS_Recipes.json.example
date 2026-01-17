@@ -1,0 +1,116 @@
+{
+  "Recipes": [
+    {
+      "DisplayName": "AK-47",
+      "ResultItem": "AK74",
+      "ResultQuantity": 1,
+      "Ingredients": [
+        {
+          "Classname": "Nail",
+          "Quantity": 20
+        },
+        {
+          "Classname": "MetalWire",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "DisplayName": "Glasses",
+      "ResultItem": "AviatorGlasses",
+      "ResultQuantity": 1,
+      "Ingredients": [
+        {
+          "Classname": "SmallStone",
+          "Quantity": 1
+        },
+        {
+          "Classname": "WoodenStick",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "DisplayName": "Advanced Backpack",
+      "ResultItem": "CoyoteBag_ColorBase",
+      "ResultQuantity": 1,
+      "Ingredients": [
+        {
+          "Classname": "Rope",
+          "Quantity": 2
+        },
+        {
+          "Classname": "BurlapSack",
+          "Quantity": 1
+        },
+        {
+          "Classname": "DuctTape",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "DisplayName": "Field Medkit",
+      "ResultItem": "FirstAidKit",
+      "ResultQuantity": 1,
+      "Ingredients": [
+        {
+          "Classname": "Bandage_Dressing",
+          "Quantity": 3
+        },
+        {
+          "Classname": "Morphine",
+          "Quantity": 1
+        },
+        {
+          "Classname": "Epinephrine",
+          "Quantity": 1
+        },
+        {
+          "Classname": "PurificationTablets",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "DisplayName": "Survival Kit",
+      "ResultItem": "SeaChest",
+      "ResultQuantity": 1,
+      "Ingredients": [
+        {
+          "Classname": "WoodAxe",
+          "Quantity": 1
+        },
+        {
+          "Classname": "KitchenKnife",
+          "Quantity": 1
+        },
+        {
+          "Classname": "Compass",
+          "Quantity": 1
+        },
+        {
+          "Classname": "Matches",
+          "Quantity": 1
+        },
+        {
+          "Classname": "CanOpener",
+          "Quantity": 1
+        }
+      ]
+    }
+  ]
+}
+
+<!-- NOTES:
+- Place in: $profile:CraftSystem/CS_Recipes.json
+- DisplayName: Shown in GUI
+- ResultItem: DayZ classname to create
+- ResultQuantity: How many to create
+- Ingredients: Array of required items
+- Classname: DayZ item classname
+- Quantity: How many needed
+- Supports 2-5 ingredients per recipe
+- Stackable items (nails, ammo): counted by quantity
+- Non-stackable (food, tools): counted by whole items
+-->

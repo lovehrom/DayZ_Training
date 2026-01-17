@@ -1,0 +1,56 @@
+<!-- CS_Main.layout - Main crafting menu layout -->
+<!-- Place in: dta/gui/CraftSystem/Scripts/GUI/Layouts/ -->
+
+<Widget layout="Absolute">
+    <Size x="800" y="600" />
+
+    <!-- Main background panel -->
+    <Panel Name="PanelMain">
+        <Pos x="0" y="0" />
+        <Size x="800" y="600" />
+        <Color color="ARGB(230, 20, 20, 20)" />
+        <Border width="2" color="ARGB(255, 100, 100, 100)" />
+    </Panel>
+
+    <!-- Title text -->
+    <TextWidget Name="TextTitle">
+        <Pos x="400" y="30" />
+        <Size x="400" y="40" />
+        <Text text="CRAFTING RECIPES" align="center" />
+        <Color color="ARGB(255, 255, 255, 255)" />
+        <Font font="RobotoCondensed" height="30" />
+    </TextWidget>
+
+    <!-- Scroll container for recipes -->
+    <ScrollWidget Name="ScrollRecipes">
+        <Pos x="50" y="100" />
+        <Size x="700" y="450" />
+        <Color color="ARGB(200, 30, 30, 30)" />
+        <Flags fill="0" />
+
+        <!-- Wrap spacer for recipe rows -->
+        <WrapSpacerWidget Name="RecipeContainer">
+            <Pos x="0" y="0" />
+            <Size x="680" y="440" />
+            <Flags fill="0" />
+        </WrapSpacerWidget>
+    </ScrollWidget>
+
+    <!-- Close button -->
+    <ButtonWidget Name="ButtonClose">
+        <Pos x="700" y="30" />
+        <Size x="80" y="40" />
+        <Text text="CLOSE" />
+        <Color color="ARGB(255, 180, 40, 40)" />
+        <HoverColor color="ARGB(255, 200, 60, 60)" />
+        <PressedColor color="ARGB(255, 150, 30, 30)" />
+    </ButtonWidget>
+</Widget>
+
+<!-- NOTES:
+- This is a simplified example layout
+- Adjust sizes and positions as needed
+- RecipeContainer holds CS_RecipeRow widgets
+- ScrollWidget enables scrolling for many recipes
+- WrapSpacerWidget auto-arranges recipe rows
+-->
