@@ -1,0 +1,27 @@
+[
+    {
+        "Name": "Cherno",
+        "Position": [6500, 0, 2500],
+        "Description": "Chernogorsk"
+    },
+    {
+        "Name": "Electro",
+        "Position": [5000, 0, 2500],
+        "Description": "Elektrozavodsk"
+    },
+    {
+        "Name": "NWAF",
+        "Position": [4500, 0, 8500],
+        "Description": "Northwest Airfield"
+    },
+    {
+        "Name": "Berezino",
+        "Position": [12000, 0, 9500],
+        "Description": "Berezino"
+    },
+    {
+        "Name": "Zelenogorsk",
+        "Position": [2500, 0, 5000],
+        "Description": "Zelenogorsk"
+    }
+]

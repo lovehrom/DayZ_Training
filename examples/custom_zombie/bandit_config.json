@@ -1,0 +1,12 @@
+{
+    "Health": 200,
+    "Damage": 50,
+    "AgroRange": 100,
+    "Loot": [
+        "AKM",
+        "Magazine_AKM_30Rnd",
+        "AmmoBox_762x39_20Rnd",
+        "CannedBeans",
+        "WaterBottle"
+    ]
+}
