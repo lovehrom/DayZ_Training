@@ -2,7 +2,7 @@
 
 **Purpose:** Complete index of ALL mechanics in DayZ_Training
 **For:** AI quick lookup (1 second instead of 15)
-**Last Updated:** 2025-01-18 (Phase 5 Complete)
+**Last Updated:** 2025-01-18 (Phase 6 Complete)
 
 ---
 
