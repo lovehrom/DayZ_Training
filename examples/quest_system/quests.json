@@ -1,0 +1,188 @@
+{
+    "Quests": [
+        {
+            "ID": 1001,
+            "Title": "Hunt Wolves",
+            "Descriptions": [
+                "Wolves are attacking the village!",
+                "Kill 5 wolves",
+                "Return to the hunter for your reward"
+            ],
+            "ObjectiveText": "Kill 5 Wolves (0/5)",
+            "FollowUpQuest": 1002,
+            "Repeatable": false,
+            "IsDailyQuest": false,
+            "IsWeeklyQuest": false,
+            "CancelQuestOnPlayerDeath": false,
+            "Autocomplete": false,
+            "IsGroupQuest": false,
+            "Rewards": [
+                {
+                    "Type": "item",
+                    "ClassName": "AK74",
+                    "Amount": 1
+                },
+                {
+                    "Type": "currency",
+                    "Amount": 1000
+                }
+            ],
+            "QuestGiverIDs": [1],
+            "QuestTurnInIDs": [1],
+            "Objectives": [
+                {
+                    "ObjectiveType": 2,
+                    "Amount": 5,
+                    "ClassNames": ["Animal_CanisLupus_Grey", "Animal_CanisLupus_White"],
+                    "AllowedWeapons": [],
+                    "CountSelfKill": 0,
+                    "MaxDistance": -1.0
+                }
+            ],
+            "QuestColor": 0,
+            "ReputationReward": 0,
+            "PreQuestIDs": [],
+            "Active": 1
+        },
+        {
+            "ID": 1002,
+            "Title": "Master Hunter",
+            "Descriptions": [
+                "You've proven yourself as a hunter.",
+                "Kill 10 bears",
+                "Return to claim your legendary reward"
+            ],
+            "ObjectiveText": "Kill 10 Bears (0/10)",
+            "FollowUpQuest": -1,
+            "Repeatable": false,
+            "IsDailyQuest": false,
+            "IsWeeklyQuest": false,
+            "CancelQuestOnPlayerDeath": false,
+            "Autocomplete": false,
+            "IsGroupQuest": false,
+            "Rewards": [
+                {
+                    "Type": "item",
+                    "ClassName": "M4A1",
+                    "Amount": 1
+                },
+                {
+                    "Type": "currency",
+                    "Amount": 5000
+                }
+            ],
+            "QuestGiverIDs": [1],
+            "QuestTurnInIDs": [1],
+            "Objectives": [
+                {
+                    "ObjectiveType": 2,
+                    "Amount": 10,
+                    "ClassNames": ["Animal_UrsusArctos"],
+                    "AllowedWeapons": [],
+                    "CountSelfKill": 0,
+                    "MaxDistance": -1.0
+                }
+            ],
+            "QuestColor": 0,
+            "ReputationReward": 0,
+            "PreQuestIDs": [1001],
+            "Active": 1
+        },
+        {
+            "ID": 2001,
+            "Title": "Gather Apples",
+            "Descriptions": [
+                "We need food for the village!",
+                "Collect 10 apples",
+                "Bring them to the trader"
+            ],
+            "ObjectiveText": "Collect 10 Apples (0/10)",
+            "FollowUpQuest": -1,
+            "Repeatable": true,
+            "IsDailyQuest": false,
+            "IsWeeklyQuest": false,
+            "CancelQuestOnPlayerDeath": false,
+            "Autocomplete": false,
+            "IsGroupQuest": false,
+            "Rewards": [
+                {
+                    "Type": "item",
+                    "ClassName": "BandageDressing",
+                    "Amount": 5
+                },
+                {
+                    "Type": "currency",
+                    "Amount": 500
+                }
+            ],
+            "QuestGiverIDs": [2],
+            "QuestTurnInIDs": [2],
+            "Objectives": [
+                {
+                    "ObjectiveType": 4,
+                    "Collections": [
+                        {
+                            "Amount": 10,
+                            "ClassName": "Apple",
+                            "QuantityPercent": -1
+                        }
+                    ],
+                    "ShowDistance": 1,
+                    "NeedAnyCollection": 0
+                }
+            ],
+            "QuestColor": 0,
+            "ReputationReward": 0,
+            "PreQuestIDs": [],
+            "Active": 1
+        },
+        {
+            "ID": 2002,
+            "Title": "Medical Supplies",
+            "Descriptions": [
+                "We're running low on medical supplies!",
+                "Collect 5 bandages",
+                "Bring them to the medic"
+            ],
+            "ObjectiveText": "Collect 5 Bandages (0/5)",
+            "FollowUpQuest": -1,
+            "Repeatable": true,
+            "IsDailyQuest": false,
+            "IsWeeklyQuest": false,
+            "CancelQuestOnPlayerDeath": false,
+            "Autocomplete": false,
+            "IsGroupQuest": false,
+            "Rewards": [
+                {
+                    "Type": "item",
+                    "ClassName": "Morphine",
+                    "Amount": 2
+                },
+                {
+                    "Type": "currency",
+                    "Amount": 300
+                }
+            ],
+            "QuestGiverIDs": [3],
+            "QuestTurnInIDs": [3],
+            "Objectives": [
+                {
+                    "ObjectiveType": 4,
+                    "Collections": [
+                        {
+                            "Amount": 5,
+                            "ClassName": "BandageDressing",
+                            "QuantityPercent": -1
+                        }
+                    ],
+                    "ShowDistance": 1,
+                    "NeedAnyCollection": 0
+                }
+            ],
+            "QuestColor": 0,
+            "ReputationReward": 0,
+            "PreQuestIDs": [],
+            "Active": 1
+        }
+    ]
+}
