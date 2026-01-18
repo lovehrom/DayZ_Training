@@ -1,0 +1,171 @@
+{
+    // ============================================================
+    // ATM SYSTEM CONFIGURATION
+    // ============================================================
+    // This file contains all settings for the banking system
+    // Modify these values to customize the system for your server
+
+    // ============================================================
+    // CREDIT CARD REQUIREMENT
+    // ============================================================
+    // If true, players must hold a CreditCard item in their hands to use ATMs
+    // If false, anyone can use ATMs without a card
+    //
+    // Recommended: false for PVE servers, true for RP servers
+    "RequireCreditCard": false,
+
+    // ============================================================
+    // TRANSACTION FEE
+    // ============================================================
+    // Percentage fee for money transfers (not deposits/withdrawals)
+    // Value: 0.0 to 1.0 (where 0.05 = 5%, 0.10 = 10%, etc.)
+    //
+    // Examples:
+    //   0.0   = No fee (free transfers)
+    //   0.05  = 5% fee (default)
+    //   0.10  = 10% fee
+    //   0.20  = 20% fee (high fee economy)
+    //
+    // Formula: Total Deducted = Transfer Amount + (Transfer Amount * Fee)
+    "TransactionFee": 0.05,
+
+    // ============================================================
+    // DEFAULT STARTING BALANCE
+    // ============================================================
+    // Amount of currency new players start with in their bank account
+    // This is given when a player's account is first created
+    //
+    // Examples:
+    //   0      = Start with nothing (default)
+    //   1000   = Start with 1000 coins (starter money)
+    //   5000   = Start with 5000 coins (generous)
+    //
+    // Recommended: 0 for hardcore servers, 1000 for friendly servers
+    "DefaultStartBalance": 0,
+
+    // ============================================================
+    // DEFAULT MAXIMUM BALANCE
+    // ============================================================
+    // Maximum amount of currency a player can store in their bank account
+    // This prevents economy inflation and hoarding
+    //
+    // Examples:
+    //   100000    = 100k max (hardcore economy)
+    //   1000000   = 1 million max (default)
+    //   5000000   = 5 million max (generous)
+    //   999999999 = No practical limit (effectively unlimited)
+    //
+    // Recommended: 1000000 (1 million) for balanced economy
+    "DefaultMaxBalance": 1000000,
+
+    // ============================================================
+    // MINIMUM TRANSACTION AMOUNT
+    // ============================================================
+    // Smallest amount that can be deposited/withdrawn/transferred
+    // Prevents spam with tiny amounts
+    //
+    // Recommended: 1 (1 coin)
+    "MinTransactionAmount": 1,
+
+    // ============================================================
+    // MAXIMUM SINGLE TRANSACTION
+    // ============================================================
+    // Largest amount that can be deposited/withdrawn/transferred at once
+    // Prevents exploits and balances economy
+    //
+    // Examples:
+    //   10000    = 10k max per transaction
+    //   50000    = 50k max per transaction
+    //   100000   = 100k max per transaction
+    //
+    // Recommended: 50000 (50k)
+    "MaxSingleTransaction": 50000,
+
+    // ============================================================
+    // DAILY WITHDRAWAL LIMIT
+    // ============================================================
+    // Maximum total amount a player can withdraw per day (24 hours)
+    // 0 = no limit
+    //
+    // Examples:
+    //   0        = No limit (default)
+    //   20000    = 20k per day
+    //   50000    = 50k per day
+    //
+    // Recommended: 0 (no limit) for PVE, 50000 for RP
+    "DailyWithdrawalLimit": 0,
+
+    // ============================================================
+    // TRANSACTION QUEUE SIZE
+    // ============================================================
+    // Maximum number of concurrent transactions in the queue
+    // Prevents server overload from spam
+    //
+    // Recommended: 100 (plenty for most servers)
+    "TransactionQueueSize": 100,
+
+    // ============================================================
+    // BANKING LOGS
+    // ============================================================
+    // If true, all transactions are logged to server log file
+    // Useful for debugging and auditing
+    //
+    // Recommended: false (disable for performance, enable for debugging)
+    "BankingLogs": false,
+
+    // ============================================================
+    // ACCEPTED CURRENCY ITEMS
+    // ============================================================
+    // List of item class names that can be deposited
+    // These items will be recognized as currency
+    //
+    // Note: Items must have a "value" property or be defined in your economy mod
+    //
+    // Examples:
+    //   "Coin_10"    - 10-coin item
+    //   "Coin_50"    - 50-coin item
+    //   "Coin_100"   - 100-coin item
+    //   "Money_Ruble" - Ruble note
+    "CurrenciesAccepted": [
+        "Coin_10",
+        "Coin_50",
+        "Coin_100",
+        "Money_Ruble",
+        "Money_Dollar"
+    ],
+
+    // ============================================================
+    // AUTOMATIC BACKUP
+    // ============================================================
+    // If true, automatically backs up banking data daily
+    // Backups saved to $profile:Banking/Backups/
+    //
+    // Recommended: true (prevent data loss)
+    "AutoBackup": true,
+
+    // ============================================================
+    // BACKUP RETENTION DAYS
+    // ============================================================
+    // How many days to keep automatic backups
+    // Older backups are automatically deleted
+    //
+    // Recommended: 7 (keep 7 days of backups)
+    "BackupRetentionDays": 7,
+
+    // ============================================================
+    // NOTIFICATION SETTINGS
+    // ============================================================
+    // Control what notifications are shown to players
+
+    // Show balance after every transaction
+    "ShowBalanceOnTransaction": true,
+
+    // Show transaction fee amount
+    "ShowTransactionFee": true,
+
+    // Show notification when player receives money
+    "NotifyOnReceive": true,
+
+    // Show notification when player sends money
+    "NotifyOnSend": true
+}
