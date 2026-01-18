@@ -1,0 +1,59 @@
+{
+    "items": [
+        {
+            "type": "AK74",
+            "buyPrice": 1000,
+            "sellPrice": 800
+        },
+        {
+            "type": "M4A1",
+            "buyPrice": 1200,
+            "sellPrice": 960
+        },
+        {
+            "type": "Mag_STANAG_30Rnd",
+            "buyPrice": 100,
+            "sellPrice": 80
+        },
+        {
+            "type": "Mag_AK74_30Rnd",
+            "buyPrice": 100,
+            "sellPrice": 80
+        },
+        {
+            "type": "BandageDressing",
+            "buyPrice": 50,
+            "sellPrice": 40
+        },
+        {
+            "type": "Antibiotic",
+            "buyPrice": 200,
+            "sellPrice": 160
+        },
+        {
+            "type": "Morphine",
+            "buyPrice": 150,
+            "sellPrice": 120
+        },
+        {
+            "type": "BakedBeans_Can",
+            "buyPrice": 30,
+            "sellPrice": 25
+        },
+        {
+            "type": "SodaCan_Cola",
+            "buyPrice": 25,
+            "sellPrice": 20
+        },
+        {
+            "type": "PainkillerTablets",
+            "buyPrice": 75,
+            "sellPrice": 60
+        },
+        {
+            "type": "VitaminBottle",
+            "buyPrice": 100,
+            "sellPrice": 80
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "stock": [
+        {
+            "type": "AK74",
+            "maxStock": 5,
+            "respawnTime": 3600
+        },
+        {
+            "type": "M4A1",
+            "maxStock": 3,
+            "respawnTime": 7200
+        },
+        {
+            "type": "Mag_STANAG_30Rnd",
+            "maxStock": -1,
+            "respawnTime": 0
+        },
+        {
+            "type": "Mag_AK74_30Rnd",
+            "maxStock": -1,
+            "respawnTime": 0
+        },
+        {
+            "type": "BandageDressing",
+            "maxStock": -1,
+            "respawnTime": 0
+        },
+        {
+            "type": "Antibiotic",
+            "maxStock": 10,
+            "respawnTime": 1800
+        },
+        {
+            "type": "Morphine",
+            "maxStock": 10,
+            "respawnTime": 1800
+        }
+    ]
+}
