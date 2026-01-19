@@ -128,6 +128,7 @@
 - **CF Framework** → reference/CF_FRAMEWORK.md
 - **CF ModStorage** → reference/CF_MODSTORAGE.md
 - **CF RPC System** → topics/31_cf_rpc.md | reference/CF_RPC_SYSTEM.md | examples/cf_rpc/
+- **Collections API** → reference/COLLECTIONS_AND_TYPEDEFS.md
 - **Config** → topics/02_config.md
 - **Crafting (GUI)** → reference/CRAFTING_GUI_SYSTEMS.md | examples/gui_crafting/
 - **Crafting (Vanilla)** → topics/06_crafting.md
@@ -141,6 +142,7 @@
 ### E
 - **Economy** → topics/05_economy.md
 - **EnderChest** → reference/PERSISTENT_STORAGE.md
+- **Enforce Script Core** → reference/ENFORCE_SCRIPT_CORE.md
 - **EntityAI Lifecycle** → reference/ENTITYAI_LIFECYCLE.md
 - **Events** → topics/07_events.md
 
@@ -157,6 +159,7 @@
 
 ### I
 - **Infection System** → reference/MEDIUM_PRIORITY_SYSTEMS.md
+- **Input Device System** → reference/INPUT_DEVICE_SYSTEM.md
 - **Integration Patterns** → reference/INTEGRATION_PATTERNS.md | examples/integration/
 - **Items** → topics/01_items.md
 - **Inventory System** → reference/INVENTORY_SYSTEM.md
@@ -171,6 +174,7 @@
 ### M
 - **Mail System** → topics/32_mail_systems.md | reference/MAIL_SYSTEM.md | examples/mail_system/
 - **Material Pack** → reference/CRAFTING_GUI_SYSTEMS.md | reference/LOOT_BOX_SYSTEMS.md
+- **Materials and Textures** → reference/MATERIALS_AND_TEXTURES.md
 - **Medical System** → reference/MEDICAL_SYSTEM.md
 - **Medium Priority Systems** → reference/MEDIUM_PRIORITY_SYSTEMS.md
 - **Mission API** → reference/MISSION_API.md
@@ -201,6 +205,7 @@
 - **SLP Realistic Survival** → reference/PLAYER_MODIFIERS.md
 - **Specimen RO-9** → reference/ZOMBIE_CUSTOMIZATION.md | reference/LOOT_BOX_SYSTEMS.md
 - **Storage System** → reference/STORAGE_SYSTEM.md
+- **String Parsing** → reference/STRINGS_AND_PARSING.md
 - **Striker Clothes** → reference/ARMOR_DAMAGE_SYSTEMS.md
 - **Symptoms & Effects** → reference/SYMPTOMS_EFFECTS.md
 
@@ -208,16 +213,20 @@
 - **Teleportation** → topics/13_teleportation.md | reference/TELEPORTATION_SYSTEMS.md | examples/teleportation/
 - **Temperature System** → reference/TEMPERATURE_SYSTEM.md
 - **Time-Based Events** → reference/TIME_BASED_EVENTS.md
+- **Timer and CallQueue API** → reference/TIMER_AND_QUEUE_API.md
 - **Trader System** → topics/27_trader_systems.md | reference/TRADER_SYSTEM.md | examples/trader_system/
 - **Troubleshooting** → troubleshooting/common_errors.md
 
 ### U
 - **UI Framework** → reference/UI_FRAMEWORK.md
+- **UI Widget Methods** → reference/UI_WIDGET_METHODS.md
 - **UI System** → topics/09_ui.md | reference/UI_HUD_SYSTEM.md
 
 ### V
-- **Vehicle Lock System** → reference/VEHICLE_LOCK_SYSTEM.md
+- **Vehicle Lock System** → reference/VE_VEHICLE_LOCK_SYSTEM.md
 - **Vehicle Systems** → reference/VEHICLE_SYSTEMS.md
+- **Visual Object API** → reference/VISUAL_OBJECT_API.md
+
 
 ### W
 - **Waraeger Armory** → reference/ARMOR_DAMAGE_SYSTEMS.md
